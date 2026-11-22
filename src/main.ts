@@ -28,8 +28,12 @@ export default class LanSharePlugin extends Plugin {
     this.registerLeafButton();
     this.setupStatusBar();
 
-    // 明确约定：插件加载 ≠ 分享服务开启；服务只由用户在设置面板显式启动
-    this.updateStatusBar();
+    // 服务默认不随插件加载自动开启；仅当用户在设置中开启「随 Obsidian 启动」时才自动拉起
+    if (this.data.autoStart) {
+      void this.startServer();
+    } else {
+      this.updateStatusBar();
+    }
   }
 
   onunload(): void {

@@ -1,0 +1,43 @@
+name: Release Obsidian plugin
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Package release artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p release
+          # 插件必需三个文件：main.js / manifest.json / styles.css
+          cp main.js manifest.json styles.css release/
+          # 打包 vendor 静态资源（mermaid、前端脚本）
+          cp -r vendor release/vendor
+          cd release
+          zip -r ../lan-share.zip .
+          cd ..
+          gh release create "$GITHUB_REF_NAME" \
+            release/main.js release/manifest.json release/styles.css \
+            lan-share.zip \
+            --title "$GITHUB_REF_NAME" --generate-notes

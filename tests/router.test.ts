@@ -27,6 +27,7 @@ function makeDeps(overrides?: Partial<PluginData>): { router: Router; vault: Moc
     port: 8765,
     bind: "0.0.0.0",
     serverEnabled: true,
+    autoStart: false,
     shares: [
       { path: LOCAL_MD, type: "file", name: "hello", shareTime: 1 },
       { path: FOLDER, type: "folder", name: "8D", shareTime: 2 },

@@ -66,6 +66,21 @@ export class LanShareSettingTab extends PluginSettingTab {
           }),
       );
 
+    new Setting(containerEl)
+      .setName("随 Obsidian 启动时自动开启服务")
+      .setDesc("开启后，每次打开 Obsidian 会自动启动分享服务，无需手动点「启动服务」")
+      .addToggle((tg) =>
+        tg
+          .setValue(this.plugin.data.autoStart)
+          .onChange(async (v) => {
+            this.plugin.data.autoStart = v;
+            void this.plugin.persist();
+            if (v) {
+              await this.plugin.startServer();
+            }
+          }),
+      );
+
     if (this.plugin.isRunning) {
       const urlRow = new Setting(containerEl)
         .setName("首页链接")

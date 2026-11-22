@@ -16,6 +16,8 @@ export interface PluginData {
   bind: "0.0.0.0" | "127.0.0.1";
   /** 服务是否允许运行（用户在设置里显式开启；插件加载不等于开启） */
   serverEnabled: boolean;
+  /** 随 Obsidian 启动自动开启服务（未开启时每次启动保持关闭，需手动启动） */
+  autoStart: boolean;
   shares: ShareItem[];
 }
 
@@ -24,6 +26,7 @@ export const DEFAULT_DATA: PluginData = {
   port: 8765,
   bind: "0.0.0.0",
   serverEnabled: false,
+  autoStart: false,
   shares: [],
 };
 
