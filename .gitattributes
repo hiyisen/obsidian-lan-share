@@ -1,0 +1,2 @@
+# vendored 第三方压缩产物：不检查行尾空白（内含压缩字符串模板）
+vendor/mermaid.min.js -whitespace

@@ -1,0 +1,10 @@
+{
+  "id": "lan-share",
+  "name": "局域网分享",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "在局域网内把笔记分享给朋友：浏览器打开链接即可只读预览，支持 Obsidian MD、双链、嵌入图片与 mermaid。",
+  "author": "yjh",
+  "authorUrl": "",
+  "isDesktopOnly": true
+}

@@ -1,0 +1,72 @@
+/* 局域网分享插件 · 设置面板样式 */
+
+.lan-share-status {
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.lan-share-url,
+.lan-share-token {
+  width: 100%;
+  font-family: var(--font-monospace);
+  font-size: 0.85em;
+}
+
+.lan-share-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.lan-share-card {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: var(--background-secondary);
+}
+
+.lan-share-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.lan-share-type {
+  font-size: 12px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  white-space: nowrap;
+}
+
+.lan-share-name {
+  font-weight: 600;
+}
+
+.lan-share-card-body {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.lan-share-card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.lan-share-tree {
+  margin-top: 8px;
+  border-top: 1px dashed var(--background-modifier-border);
+  padding-top: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.lan-share-tree-row {
+  line-height: 1.7;
+}

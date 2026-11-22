@@ -1,0 +1,33 @@
+{
+  "name": "obsidian-lan-share",
+  "version": "0.1.0",
+  "description": "局域网分享插件：将笔记以只读预览方式分享给朋友（浏览器打开即看，支持 MD/mermaid/图片）",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs --watch",
+    "build": "node esbuild.config.mjs production",
+    "test": "node --test tests/*.test.ts",
+    "deploy": "bash scripts/copy-to-vault.sh"
+  },
+  "keywords": [
+    "obsidian",
+    "obsidian-plugin",
+    "lan",
+    "share"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^22.10.0",
+    "esbuild": "^0.24.0",
+    "obsidian": "^1.7.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^10.1.0",
+    "markdown-it-mark": "^4.0.0",
+    "markdown-it-task-lists": "^2.1.1"
+  }
+}
