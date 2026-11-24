@@ -75,17 +75,8 @@ npm run deploy     # 部署到 vault 的 .obsidian/plugins/lan-share
 2. 修改 `manifest.json` 提升版本号，`versions.json` 增加对应 `minAppVersion` 映射
 3. 打 tag 并推送：`git tag 0.1.0 && git push origin 0.1.0`（tag 必须与 `manifest.json` 的 `version` 完全一致）
 4. GitHub Actions 自动构建并把 `main.js / manifest.json / styles.css` 附带为 release 附件
-5. 向 [obsidianmd/obsidian-releases](https://github.com/obsidianmd/obsidian-releases) 提 PR，在 `community-plugins.json` 登记：
-   ```json
-   {
-     "id": "lan-share",
-     "name": "局域网分享",
-     "author": "yjh",
-     "description": "在局域网内把笔记分享给朋友，浏览器只读预览，支持双链/图片/mermaid",
-     "repo": "<你的用户名>/<仓库名>"
-   }
-   ```
-6. 审核通过合并后，Obsidian 社区插件市场即可搜索到「局域网分享」
+5. 登录 [community.obsidian.md](https://community.obsidian.md)（Obsidian 账号），在设置中 **Connect** GitHub 账号（只读验证仓库所有权）
+6. 在 **Plugins → New plugin** 提交仓库 URL，等待官方审核；审核通过后即可在 Obsidian 社区插件市场搜索到「局域网分享」
 
 > 准备已就绪：`.github/workflows/release.yml` 自动发布、`manifest.json`/`versions.json` 已符合官方约束、README/LICENSE 齐全。
 
